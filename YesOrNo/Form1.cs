@@ -20,14 +20,17 @@ namespace YesOrNo
         private void messageTextBox_Click(object sender, EventArgs e)
         {
             answerLabel.Text = "-";
-            getAnswerButton.Enabled = true;
             answerLabel.ForeColor = Color.Gray;
         }
 
+        private Random rnd = new Random();
+
         private void getAnswerButton_Click(object sender, EventArgs e)
         {
-            Random rnd = new Random();
-            if (rnd.NextDouble() < 0.5)
+            double alpha = rnd.NextDouble();
+            double chance = chanceTrackBar.Value / 100.0;
+
+            if (alpha < chance)
             {
                 answerLabel.Text = "YES";
                 answerLabel.ForeColor = Color.Green;
@@ -37,7 +40,11 @@ namespace YesOrNo
                 answerLabel.Text = "NO";
                 answerLabel.ForeColor = Color.Red;
             }
-            getAnswerButton.Enabled = false;
+        }
+
+        private void chanceTrackBar_Scroll(object sender, EventArgs e)
+        {
+            chanceValueLabel.Text = $"{chanceTrackBar.Value}%";
         }
     }
 }

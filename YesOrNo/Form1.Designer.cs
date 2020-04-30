@@ -31,6 +31,10 @@
             this.messageTextBox = new System.Windows.Forms.TextBox();
             this.getAnswerButton = new System.Windows.Forms.Button();
             this.answerLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.chanceValueLabel = new System.Windows.Forms.Label();
+            this.chanceTrackBar = new System.Windows.Forms.TrackBar();
+            ((System.ComponentModel.ISupportInitialize)(this.chanceTrackBar)).BeginInit();
             this.SuspendLayout();
             // 
             // messageTextBox
@@ -66,16 +70,50 @@
             this.answerLabel.TabIndex = 2;
             this.answerLabel.Text = "-";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(202, 180);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(71, 20);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Chance:";
+            // 
+            // chanceValueLabel
+            // 
+            this.chanceValueLabel.AutoSize = true;
+            this.chanceValueLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chanceValueLabel.Location = new System.Drawing.Point(489, 180);
+            this.chanceValueLabel.Name = "chanceValueLabel";
+            this.chanceValueLabel.Size = new System.Drawing.Size(42, 20);
+            this.chanceValueLabel.TabIndex = 4;
+            this.chanceValueLabel.Text = "50%";
+            // 
+            // chanceTrackBar
+            // 
+            this.chanceTrackBar.Location = new System.Drawing.Point(273, 180);
+            this.chanceTrackBar.Maximum = 100;
+            this.chanceTrackBar.Name = "chanceTrackBar";
+            this.chanceTrackBar.Size = new System.Drawing.Size(210, 56);
+            this.chanceTrackBar.TabIndex = 5;
+            this.chanceTrackBar.Value = 50;
+            this.chanceTrackBar.Scroll += new System.EventHandler(this.chanceTrackBar_Scroll);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.chanceTrackBar);
+            this.Controls.Add(this.chanceValueLabel);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.answerLabel);
             this.Controls.Add(this.getAnswerButton);
             this.Controls.Add(this.messageTextBox);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.chanceTrackBar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -86,6 +124,9 @@
         private System.Windows.Forms.TextBox messageTextBox;
         private System.Windows.Forms.Button getAnswerButton;
         private System.Windows.Forms.Label answerLabel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label chanceValueLabel;
+        private System.Windows.Forms.TrackBar chanceTrackBar;
     }
 }
 
